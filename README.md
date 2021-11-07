@@ -1,7 +1,7 @@
 - 👋 Hi, I’m Oluwatobi Yusuf
 - 👀 I’m interested in software development
-- 🌱 I’m currently learning python
-- 💞️ I’m looking to collaborate on backend programming
+- 🌱 I’m currently learning microsoft power platform
+- 💞️ I’m looking to collaborate on power platform projects
 - 📫 How to reach me @ yusufoluwatobi21@gmail.com via mail
 
 <!---
