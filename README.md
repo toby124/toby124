@@ -1,5 +1,5 @@
 - 👋 Hi, I’m Oluwatobi Yusuf
-- 👀 I’m a citizen developer and low-code advocate
+- 👀 I’m a low-code advocate and Microsoft MVP
 - 🌱 I’m proficient with microsoft power platform
 - 💞️ I’m looking to collaborate on power platform projects
 - 📫 Reach me @ yusufoluwatobi21@gmail.com 
