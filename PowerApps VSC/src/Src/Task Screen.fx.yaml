@@ -1,0 +1,322 @@
+"'Task Screen' As screen":
+    Fill: =RGBA(237, 237, 237, 0.7)
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+    OnVisible: =
+
+    Button1_3 As button:
+        BorderColor: =App.Theme.Colors.Primary
+        BorderThickness: =1
+        Color: =App.Theme.Colors.PrimaryForeground
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =1
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =768
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =0
+        RadiusTopLeft: =50
+        RadiusTopRight: =0
+        Size: =15
+        Text: =
+        Width: =1087
+        X: =278
+        ZIndex: =1
+
+    Image1_3 As image:
+        BorderColor: =App.Theme.Colors.Darker40
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =50
+        Image: =User().Image
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =50
+        X: =1296
+        Y: =16
+        ZIndex: =2
+
+    TextCanvas1_3 As Text:
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.'Lato Black'
+        Height: =42
+        Size: =30
+        Text: ="Task"
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =182
+        X: =370
+        Y: =36
+        ZIndex: =7
+
+    Label1_10 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(102, 102, 102, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        OnSelect: =Navigate('Home Screen', ScreenTransition.Fade)
+        Text: ="Dashboard"
+        X: =60
+        Y: =66
+        ZIndex: =9
+
+    Table1_2 As Table.pcfdataset:
+        DateOnlyFormat: ='PowerAppsOneGrid.DateOnlyFormat'.ShortDate
+        DateTimeFormat: ='PowerAppsOneGrid.DateTimeFormat'.ShortDateTime
+        DisplayMode: =DisplayMode.Edit
+        Height: =614
+        Items: |-
+            =SortByColumns(
+                Filter(
+                    'Task list',
+                   /* 'Project ID' in (Filter(
+                        'Projects list',
+                        'Project Manager'.Email = User().Email
+                    ).'Project ID'),*/
+                    StartsWith(
+                        Title,
+                        TextInputCanvas1_2.Value
+                    ) || StartsWith(
+                        'Project ID',
+                        TextInputCanvas1_2.Value
+                    )
+                ),
+                "Modified",
+                SortOrder.Descending
+            )
+        onCellValueChange: =false
+        onFilter: =false
+        onNavigate: =false
+        onRowSelect: =false
+        onSave: =false
+        OnSelect: =
+        Width: =1055
+        X: =308
+        Y: =140
+        ZIndex: =10
+
+        Title1_1 As PowerAppsOneGridTemplate_dataField.textualColumn:
+            FieldDisplayName: ="Title"
+            FieldName: ="Title"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            HeaderText: ="Task Name"
+            Order: =1
+            Width: =200
+            ZIndex: =1
+
+        "'Start Date1_1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+            FieldDisplayName: ="Start Date"
+            FieldName: ="StartDate"
+            FieldType: ="D"
+            FieldVariantName: ="textualColumn"
+            Order: =4
+            Width: =0
+            ZIndex: =3
+
+        "'End Date1_1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+            FieldDisplayName: ="End Date"
+            FieldName: ="EndDate"
+            FieldType: ="D"
+            FieldVariantName: ="textualColumn"
+            Order: =5
+            Width: =0
+            ZIndex: =4
+
+        "'% Task Complete2' As PowerAppsOneGridTemplate_dataField.textualColumn":
+            FieldDisplayName: ="% Task Complete"
+            FieldName: ="OData__x0025_TaskComplete"
+            FieldType: ="n"
+            FieldVariantName: ="textualColumn"
+            Order: =7
+            Width: =0
+            ZIndex: =5
+
+        "'Task Status2' As PowerAppsOneGridTemplate_dataField.textualColumn":
+            FieldDisplayName: ="Task Status"
+            FieldName: ="TaskStatus"
+            FieldType: ="E"
+            FieldVariantName: ="textualColumn"
+            Order: =6
+            Width: =0
+            ZIndex: =6
+
+        Priority2 As PowerAppsOneGridTemplate_dataField.textualColumn:
+            FieldDisplayName: ="Priority"
+            FieldName: ="Priority"
+            FieldType: ="E"
+            FieldVariantName: ="textualColumn"
+            Order: =5
+            Width: =0
+            ZIndex: =7
+
+    Label1_11 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(106, 122, 127, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        OnSelect: =Navigate('New Project Screen', ScreenTransition.Fade)
+        Text: ="Projects"
+        X: =60
+        Y: =122
+        ZIndex: =11
+
+    Label1_12 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(136, 160, 209, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Text: ="Tasks"
+        X: =60
+        Y: =182
+        ZIndex: =13
+
+    Container1_1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Height: =46
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =1018
+        X: =308
+        Y: =77
+        ZIndex: =14
+
+        Toolbar1_1 As Toolbar.pcfdataset:
+            DisplayMode: =DisplayMode.Edit
+            Height: =46
+            Items: |-
+                =Table(
+                    {
+                        ItemKey: "new",
+                        ItemDisplayName: "New",
+                        ItemIconName: "Add",
+                        ItemAppearance: "Primary",
+                        ItemIconStyle: "Regular",
+                        ItemTooltip: "Add New Task"
+                    } ,
+                    {
+                        ItemKey: "info",
+                        ItemDisplayName: "View",
+                        ItemIconName: "Eye",
+                        ItemAppearance: "Subtle",
+                        ItemIconStyle: "Regular",
+                        ItemDisabled: IsBlank(Table1_2.Selected.Title)
+                    },
+                    {
+                        ItemKey: "edit",
+                        ItemDisplayName: "Edit",
+                        ItemIconName: "Edit",
+                        ItemAppearance: "Subtle",
+                        ItemIconStyle: "Regular",
+                         ItemDisabled: IsBlank(Table1_2.Selected.Title)
+                    },
+                    {
+                        ItemKey: "delete",
+                        ItemDisplayName: "Delete",
+                        ItemIconName: "Delete",
+                        ItemDisabled: IsBlank(Table1_2.Selected.Title),
+                        ItemAppearance: "Subtle",
+                        ItemIconStyle: "Filled"
+                    }
+                   
+                )
+            OnSelect: |-
+                =Switch(
+                    Self.Selected.ItemKey,/* Action for Key 'new' */
+                    "new",
+                    Navigate(
+                        'Task Screen_2',
+                        ScreenTransition.Fade
+                    );
+                    NewForm(Form1_1);
+                    Notify("New clicked"),/* Action for 'edit' */
+                    "edit",
+                    Set(
+                        vartaskid,
+                        Table1_2.Selected.'Project ID'
+                    );
+                    Set(
+                        vartask,
+                        Table1_2.Selected
+                    );
+                    Refresh([@'Task list']);
+                    EditForm(Form1_1);
+                    Navigate(
+                        'Task Screen_2',
+                        ScreenTransition.Fade
+                    );
+                    Notify("Edit clicked"),/* Action for 'delete' */
+                    "delete",
+                    Remove(
+                        'Task list',
+                        Table1_2.Selected
+                    );
+                    Notify(
+                        "Task has been deleted",
+                        NotificationType.Success
+                    ),/* Action for 'info' */
+                    "info",
+                    Set(
+                        vartaskid,
+                        Table1_2.Selected.'Project ID'
+                    );
+                    Set(
+                        vartask,
+                        Table1_2.Selected
+                    );
+                    Refresh([@'Task list']);
+                    ViewForm(Form1_1);
+                    Navigate(
+                        'Task Screen_2',
+                        ScreenTransition.Fade
+                    );
+                    Notify("Info clicked"),/* Default action */
+                    Notify("Unrecognized button clicked")
+                )
+            Padding: ='Toolbar.Padding'.Medium
+            Width: =417
+            X: =10
+            Y: =3
+            ZIndex: =1
+
+        "TextInputCanvas1_2 As 'Text input'":
+            DisplayMode: =DisplayMode.Edit
+            Height: =42
+            PaddingLeft: =40
+            Placeholder: ="search with task name, id"
+            Width: =260
+            X: =750
+            Y: =2
+            ZIndex: =2
+
+        Icon1_2 As icon.Search:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =App.Theme.Colors.Darker30
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =40
+            Icon: =Icon.Search
+            PaddingBottom: =7
+            PaddingLeft: =7
+            PaddingRight: =7
+            PaddingTop: =7
+            Width: =44
+            X: =750
+            Y: =5
+            ZIndex: =3
+

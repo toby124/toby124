@@ -1,0 +1,36 @@
+{
+  "91288bd6-2e86-4b5e-9392-3dd2e6dd6b44": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write",
+      "providers/PowerPlatform.Governance/Operations/Delete"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/jayawan/releases/v1.0.1697/1.0.1697.3786/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://nobleholdingslda.sharepoint.com/sites/ProjectManegementTracker": {
+        "dataSources": {
+          "Projects list": {
+            "tableName": "9cac2f4c-3d5f-423e-8c56-bf22148a0209"
+          },
+          "Task list": {
+            "tableName": "059b5f52-5c0e-435f-b4e1-be42d5183257"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Projects list",
+      "Task list"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "91288bd6-2e86-4b5e-9392-3dd2e6dd6b44"
+  }
+}

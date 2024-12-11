@@ -1,0 +1,330 @@
+"'New Project Screen' As screen":
+    Fill: =RGBA(237, 237, 237, 0.7)
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    Button1_6 As button:
+        BorderColor: =App.Theme.Colors.Primary
+        BorderThickness: =1
+        Color: =App.Theme.Colors.PrimaryForeground
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =1
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =768
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =0
+        RadiusTopLeft: =50
+        RadiusTopRight: =0
+        Size: =15
+        Text: =
+        Width: =1087
+        X: =278
+        ZIndex: =1
+
+    Image1_6 As image:
+        BorderColor: =App.Theme.Colors.Darker40
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =50
+        Image: =User().Image
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =50
+        X: =1296
+        Y: =16
+        ZIndex: =2
+
+    TextCanvas1_6 As Text:
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.'Lato Black'
+        Height: =42
+        Size: =30
+        Text: ="Projects"
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =182
+        X: =370
+        Y: =36
+        ZIndex: =8
+
+    Label1_35 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(102, 102, 102, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        OnSelect: =Navigate('Home Screen', ScreenTransition.Fade)
+        Text: ="Dashboard"
+        X: =60
+        Y: =66
+        ZIndex: =9
+
+    "'Project Table' As Table.pcfdataset":
+        DateOnlyFormat: ='PowerAppsOneGrid.DateOnlyFormat'.ShortDate
+        DateTimeFormat: ='PowerAppsOneGrid.DateTimeFormat'.ShortDateTime
+        DisplayMode: =DisplayMode.Edit
+        Height: =600
+        Items: |-
+            =Filter(
+                'Projects list', 
+                //'Project Manager'.Email=User().Email,
+                StartsWith(
+                    Title,
+                    TextInputCanvas1_1.Value
+                ) || StartsWith(
+                    'Project ID',
+                    TextInputCanvas1_1.Value
+                )
+            )
+        onCellValueChange: =false
+        onFilter: =false
+        onNavigate: =false
+        onRowSelect: =false
+        onSave: =false
+        OnSelect: =
+        Width: =1055
+        X: =291
+        Y: =151
+        ZIndex: =10
+
+        Title1_2 As PowerAppsOneGridTemplate_dataField.textualColumn:
+            FieldDisplayName: ="Title"
+            FieldName: ="Title"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            HeaderText: ="Project Name"
+            Order: =1
+            Width: =200
+            ZIndex: =1
+
+        "'Project Manager1_1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+            FieldDisplayName: ="Project Manager"
+            FieldName: ="ProjectManager"
+            FieldType: ="E"
+            FieldVariantName: ="textualColumn"
+            Order: =3
+            Width: =0
+            ZIndex: =2
+
+        "'Start Date1_2' As PowerAppsOneGridTemplate_dataField.textualColumn":
+            FieldDisplayName: ="Start Date"
+            FieldName: ="StartDate"
+            FieldType: ="D"
+            FieldVariantName: ="textualColumn"
+            Order: =4
+            Width: =0
+            ZIndex: =3
+
+        "'End Date1_2' As PowerAppsOneGridTemplate_dataField.textualColumn":
+            FieldDisplayName: ="End Date"
+            FieldName: ="EndDate"
+            FieldType: ="D"
+            FieldVariantName: ="textualColumn"
+            Order: =5
+            Width: =0
+            ZIndex: =4
+
+        "'Current Status1_1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+            FieldDisplayName: ="Current Status"
+            FieldName: ="CurrentStatus"
+            FieldType: ="E"
+            FieldVariantName: ="textualColumn"
+            Order: =6
+            Width: =0
+            ZIndex: =5
+
+        "'Project ID1_1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+            FieldDisplayName: ="Project ID"
+            FieldName: ="ProjectID"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =2
+            Width: =0
+            ZIndex: =6
+
+        "'Budget Spent1_1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+            FieldDisplayName: ="Budget Spent ($)"
+            FieldName: ="BudgetSpent"
+            FieldType: ="n"
+            FieldVariantName: ="textualColumn"
+            Order: =7
+            Width: =0
+            ZIndex: =7
+
+    Label1_36 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(136, 160, 209, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Text: ="Projects"
+        X: =60
+        Y: =122
+        ZIndex: =11
+
+    Label1_37 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(102, 102, 102, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        OnSelect: =Navigate('Task Screen', ScreenTransition.Fade)
+        Text: ="Tasks"
+        X: =60
+        Y: =182
+        ZIndex: =12
+
+    Container1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Height: =46
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =988
+        X: =328
+        Y: =87
+        ZIndex: =14
+
+        Toolbar1 As Toolbar.pcfdataset:
+            DisplayMode: =DisplayMode.Edit
+            Height: =46
+            Items: |-
+                =Table(
+                    {
+                        ItemKey: "new",
+                        ItemDisplayName: "New",
+                        ItemIconName: "Add",
+                        ItemAppearance: "Primary",
+                        ItemIconStyle: "Regular",
+                        ItemTooltip: "Add New Project"
+                    } ,
+                    {
+                        ItemKey: "info",
+                        ItemDisplayName: "View",
+                        ItemIconName: "Eye",
+                        ItemAppearance: "Subtle",
+                        ItemIconStyle: "Regular",
+                        ItemDisabled: IsBlank('Project Table'.Selected.Title)
+                    },
+                    {
+                        ItemKey: "edit",
+                        ItemDisplayName: "Edit",
+                        ItemIconName: "Edit",
+                        ItemAppearance: "Subtle",
+                        ItemIconStyle: "Regular",
+                         ItemDisabled: IsBlank('Project Table'.Selected.Title)
+                    },
+                    {
+                        ItemKey: "delete",
+                        ItemDisplayName: "Delete",
+                        ItemIconName: "Delete",
+                        ItemDisabled: IsBlank('Project Table'.Selected.Title),
+                        ItemAppearance: "Subtle",
+                        ItemIconStyle: "Filled"
+                    }
+                   
+                )
+            OnSelect: |-
+                =Switch(
+                    Self.Selected.ItemKey,/* Action for Key 'new' */
+                    "new",
+                    Refresh([@'Projects list']);
+                    Refresh([@'Task list']);
+                    NewForm('Project Form');
+                    Navigate(
+                        'New Project Details',
+                        ScreenTransition.Fade
+                    );
+                    Notify(
+                        "New clicked",
+                        NotificationType.Information,
+                        2000
+                    ),/* Action for 'edit' */
+                    "edit",
+                    Set(
+                        varprojid,
+                        'Project Table'.Selected.'Project ID'
+                    );
+                    Set(
+                        varproj,
+                        'Project Table'.Selected
+                    );
+                    Refresh([@'Projects list']);
+                    EditForm('Project Form');
+                    Navigate(
+                        'New Project Details',
+                        ScreenTransition.Fade
+                    );
+                    Notify("Edit clicked"), /* Action for 'delete' */
+                    "delete",
+                    Remove(
+                        'Projects list',
+                        'Project Table'.Selected
+                    );
+                    Notify(
+                        "Project has been deleted",
+                        NotificationType.Success
+                    ),/* Action for 'info' */
+                    "info",
+                    Refresh([@'Projects list']);
+                    ViewForm('Project Form');
+                    Navigate(
+                        'New Project Details',
+                        ScreenTransition.Fade
+                    );
+                    Notify(
+                        "Info clicked",
+                        NotificationType.Information,
+                        2000
+                    ),/* Default action */
+                    Notify(
+                        "Unrecognized button clicked",
+                        NotificationType.Information,
+                        2000
+                    )
+                )
+            Padding: ='Toolbar.Padding'.Medium
+            Width: =417
+            X: =10
+            Y: =3
+            ZIndex: =1
+
+        "TextInputCanvas1_1 As 'Text input'":
+            Align: ='TextInputCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            Height: =42
+            PaddingLeft: =40
+            Placeholder: ="search with project name, id"
+            Width: =260
+            X: =723
+            Y: =2
+            ZIndex: =2
+
+        Icon1_1 As icon.Search:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =App.Theme.Colors.Darker30
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =40
+            Icon: =Icon.Search
+            PaddingBottom: =7
+            PaddingLeft: =7
+            PaddingRight: =7
+            PaddingTop: =7
+            Width: =44
+            X: =723
+            Y: =2
+            ZIndex: =3
+

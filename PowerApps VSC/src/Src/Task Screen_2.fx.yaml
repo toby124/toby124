@@ -1,0 +1,919 @@
+"'Task Screen_2' As screen":
+    Fill: =RGBA(237, 237, 237, 0.7)
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    Button1_4 As button:
+        BorderColor: =App.Theme.Colors.Primary
+        BorderThickness: =1
+        Color: =App.Theme.Colors.PrimaryForeground
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =1
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =768
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =0
+        RadiusTopLeft: =50
+        RadiusTopRight: =0
+        Size: =15
+        Text: =
+        Width: =1087
+        X: =278
+        ZIndex: =1
+
+    Image1_4 As image:
+        BorderColor: =App.Theme.Colors.Darker40
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =50
+        Image: =User().Image
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =50
+        X: =1296
+        Y: =16
+        ZIndex: =2
+
+    Label2_3 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(237, 237, 237, 0.7)
+        Font: =App.Theme.Font
+        Height: =42
+        OnSelect: =NewForm(Form1_1)
+        Size: =13
+        Text: =
+        Tooltip: ="create new task"
+        Width: =48
+        X: =1226
+        Y: =16
+        ZIndex: =3
+
+    Icon3_3 As icon.Add:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =App.Theme.Colors.Darker30
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =40
+        Icon: =Icon.Add
+        OnSelect: =NewForm(Form1_1)
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =10
+        Tooltip: ="create new task"
+        Width: =46
+        X: =1228
+        Y: =18
+        ZIndex: =4
+
+    TextCanvas1_4 As Text:
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.'Lato Black'
+        Height: =42
+        Size: =30
+        Text: ="Tasks"
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =182
+        X: =370
+        Y: =36
+        ZIndex: =5
+
+    Label1_13 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(102, 102, 102, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        OnSelect: =Navigate('Home Screen', ScreenTransition.Fade)
+        Text: ="Dashboard"
+        X: =60
+        Y: =66
+        ZIndex: =6
+
+    Form1_1 As form.PowerApps_CoreControls_Form:
+        BorderColor: =App.Theme.Colors.Darker40
+        DataSource: ='Task list'
+        Height: =396
+        Item: =vartask
+        OnSuccess: |-
+            =Notify("Project Submitted Successfully", NotificationType.Success);
+            Navigate('Task Screen',ScreenTransition.Fade)
+        UseFluentV9Cards: =true
+        Width: =1012
+        X: =334
+        Y: =102
+        ZIndex: =8
+
+        Title_DataCard1 As typedDataCard.fluentV9TextualEditCard:
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Title
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Task list'],DataSourceInfo.DisplayName,Title)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            MaxLength: =DataSourceInfo([@'Task list'], DataSourceInfo.MaxLength, Title)
+            Required: =true
+            Update: =DataCardValue1.Value
+            Width: =337
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =22
+                Text: ="Task Name"
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            "DataCardValue1 As 'Text input'":
+                AccessibleLabel: =Parent.DisplayName
+                DisplayMode: =Parent.DisplayMode
+                Height: =32
+                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                Required: =Parent.Required
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Value: =Parent.Default
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey1.Y + DataCardKey1.Height + 4
+                ZIndex: =2
+
+            ErrorMessage1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue1.Y + DataCardValue1.Height
+                ZIndex: =3
+
+            StarVisible1 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey1.Y
+                ZIndex: =4
+
+        "'Task Owner_DataCard1' As typedDataCard.fluentV9ComboBoxMultiSelectEditCard":
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TaskOwner"
+            Default: =ThisItem.'Task Owner'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Task list'],DataSourceInfo.DisplayName,'Task Owner')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Update: =DataCardValue14_1.SelectedItems
+            Width: =337
+            X: =1
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey18 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            ErrorMessage17 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue14_1.Y + DataCardValue14_1.Height
+                ZIndex: =3
+
+            StarVisible17 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Height: =20
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey18.Y
+                ZIndex: =4
+
+            DataCardValue14_1 As combobox:
+                BorderColor: =RGBA(214, 221, 224, 1)
+                BorderStyle: =BorderStyle.None
+                ChevronBackground: =RGBA(0, 0, 0, 0)
+                ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+                ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+                ChevronFill: =RGBA(214, 221, 224, 1)
+                ChevronHoverBackground: =App.Theme.Colors.Darker10
+                ChevronHoverFill: =App.Theme.Colors.PrimaryForeground
+                DefaultSelectedItems: =Parent.Default
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(247, 245, 245, 1)
+                Font: =App.Theme.Font
+                Height: =32
+                HoverColor: =RGBA(0, 0, 0, 1)
+                HoverFill: =App.Theme.Colors.Lighter70
+                Items: =Choices([@'Task list'].'Task Owner')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedColor: =App.Theme.Colors.PrimaryForeground
+                PressedFill: =App.Theme.Colors.Darker30
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices('Task list'.'Task Owner',DataCardValue14_1.SearchText)
+                SelectionColor: =App.Theme.Colors.PrimaryForeground
+                SelectionFill: =App.Theme.Colors.Primary
+                Size: =9
+                Tooltip: =Parent.DisplayName
+                Width: =289
+                X: =24
+                Y: =36
+                ZIndex: =6
+
+        "'Start Date_DataCard3' As typedDataCard.fluentV9DateEditCard":
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="StartDate"
+            Default: =ThisItem.'Start Date'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Task list'],DataSourceInfo.DisplayName,'Start Date')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Update: =DataCardValue18.SelectedDate
+            Width: =337
+            X: =2
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey19 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            "DataCardValue18 As 'Date picker'":
+                AccessibleLabel: =Parent.DisplayName
+                DisplayMode: =Parent.DisplayMode
+                EndDate: =Date(Year(Today())+100, 12, 31)
+                Height: =32
+                Required: =Parent.Required
+                SelectedDate: =Parent.Default
+                StartDate: =Date(1900, 1, 1)
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey19.Y + DataCardKey19.Height + 4
+                ZIndex: =2
+
+            ErrorMessage18 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue18.Y + DataCardValue18.Height
+                ZIndex: =3
+
+            StarVisible18 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey19.Y
+                ZIndex: =4
+
+        "'End Date_DataCard3' As typedDataCard.fluentV9DateEditCard":
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="EndDate"
+            Default: =ThisItem.'End Date'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Task list'],DataSourceInfo.DisplayName,'End Date')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Update: =DataCardValue19.SelectedDate
+            Width: =337
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey20 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            "DataCardValue19 As 'Date picker'":
+                AccessibleLabel: =Parent.DisplayName
+                DisplayMode: =Parent.DisplayMode
+                EndDate: =Date(Year(Today())+100, 12, 31)
+                Height: =32
+                Required: =Parent.Required
+                SelectedDate: =Parent.Default
+                StartDate: =Date(1900, 1, 1)
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey20.Y + DataCardKey20.Height + 4
+                ZIndex: =2
+
+            ErrorMessage19 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue19.Y + DataCardValue19.Height
+                ZIndex: =3
+
+            StarVisible19 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey20.Y
+                ZIndex: =4
+
+        "'Actual Start Date_DataCard2' As typedDataCard.fluentV9DateEditCard":
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ActualStartDate"
+            Default: =ThisItem.'Actual Start Date'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Task list'],DataSourceInfo.DisplayName,'Actual Start Date')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Update: =DataCardValue20.SelectedDate
+            Width: =337
+            X: =1
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey21 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            "DataCardValue20 As 'Date picker'":
+                AccessibleLabel: =Parent.DisplayName
+                DisplayMode: =Parent.DisplayMode
+                EndDate: =Date(Year(Today())+100, 12, 31)
+                Height: =32
+                Required: =Parent.Required
+                SelectedDate: =Parent.Default
+                StartDate: =Date(1900, 1, 1)
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey21.Y + DataCardKey21.Height + 4
+                ZIndex: =2
+
+            ErrorMessage20 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue20.Y + DataCardValue20.Height
+                ZIndex: =3
+
+            StarVisible20 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey21.Y
+                ZIndex: =4
+
+        "'Actual End Date_DataCard2' As typedDataCard.fluentV9DateEditCard":
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ActualEndDate"
+            Default: =ThisItem.'Actual End Date'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Task list'],DataSourceInfo.DisplayName,'Actual End Date')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Update: =DataCardValue21.SelectedDate
+            Width: =337
+            X: =2
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey22 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            "DataCardValue21 As 'Date picker'":
+                AccessibleLabel: =Parent.DisplayName
+                DisplayMode: =Parent.DisplayMode
+                EndDate: =Date(Year(Today())+100, 12, 31)
+                Height: =32
+                Required: =Parent.Required
+                SelectedDate: =Parent.Default
+                StartDate: =Date(1900, 1, 1)
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey22.Y + DataCardKey22.Height + 4
+                ZIndex: =2
+
+            ErrorMessage21 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue21.Y + DataCardValue21.Height
+                ZIndex: =3
+
+            StarVisible21 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey22.Y
+                ZIndex: =4
+
+        Priority_DataCard2 As typedDataCard.fluentV9ComboBoxEditCard:
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Priority"
+            Default: =ThisItem.Priority
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Task list'],DataSourceInfo.DisplayName,Priority)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Update: =DataCardValue22.Selected
+            Width: =337
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey23 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue22 As Combobox.pcfdataset:
+                AccessibleLabel: =Parent.DisplayName
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayMode: =Parent.DisplayMode
+                Height: =32
+                Items: =Choices([@'Task list'].Priority)
+                Required: =Parent.Required
+                TriggerOutput: ="Keypress"
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey23.Y + DataCardKey23.Height + 4
+                ZIndex: =2
+
+            ErrorMessage22 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue22.Y + DataCardValue22.Height
+                ZIndex: =3
+
+            StarVisible22 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Height: =20
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey23.Y
+                ZIndex: =4
+
+        "'Task Status_DataCard2' As typedDataCard.fluentV9ComboBoxEditCard":
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TaskStatus"
+            Default: =ThisItem.'Task Status'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Task list'],DataSourceInfo.DisplayName,'Task Status')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Update: =DataCardValue23.Selected
+            Width: =337
+            X: =1
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey24 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue23 As Combobox.pcfdataset:
+                AccessibleLabel: =Parent.DisplayName
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayMode: =Parent.DisplayMode
+                Height: =32
+                Items: =Choices([@'Task list'].'Task Status')
+                Required: =Parent.Required
+                TriggerOutput: ="Keypress"
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey24.Y + DataCardKey24.Height + 4
+                ZIndex: =2
+
+            ErrorMessage23 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue23.Y + DataCardValue23.Height
+                ZIndex: =3
+
+            StarVisible23 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Height: =20
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey24.Y
+                ZIndex: =4
+
+        "'% Task Complete_DataCard2' As typedDataCard.fluentV9NumberEditCard":
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="OData__x0025_TaskComplete"
+            Default: =ThisItem.'% Task Complete'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Task list'],DataSourceInfo.DisplayName,'% Task Complete')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Update: =Value(DataCardValue24.Value)
+            Width: =337
+            X: =2
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey25 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            "DataCardValue24 As 'Text input'":
+                AccessibleLabel: =Parent.DisplayName
+                DisplayMode: =Parent.DisplayMode
+                Height: =32
+                Required: =Parent.Required
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Value: =Parent.Default
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey25.Y + DataCardKey25.Height + 4
+                ZIndex: =2
+
+            ErrorMessage24 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue24.Y + DataCardValue24.Height
+                ZIndex: =3
+
+            StarVisible24 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey25.Y
+                ZIndex: =4
+
+        "'Project Name_DataCard1' As typedDataCard.fluentV9TextualEditCard":
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ProjectName"
+            Default: =ThisItem.'Project Name'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Task list'],DataSourceInfo.DisplayName,'Project Name')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            MaxLength: =DataSourceInfo([@'Task list'], DataSourceInfo.MaxLength, 'Project Name')
+            Required: =true
+            Update: =ComboBox2_2.Selected.Value
+            Width: =337
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey7 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            ErrorMessage7 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =ComboBox2_2.Y + ComboBox2_2.Height
+                ZIndex: =3
+
+            StarVisible7 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey7.Y
+                ZIndex: =4
+
+            ComboBox2_2 As combobox:
+                BorderColor: =App.Theme.Colors.Darker40
+                BorderThickness: =0
+                ChevronBackground: =Color.Transparent
+                ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+                ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+                ChevronFill: =
+                ChevronHoverBackground: =App.Theme.Colors.Darker10
+                ChevronHoverFill: =App.Theme.Colors.PrimaryForeground
+                DefaultSelectedItems: =[Parent.Default]
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value","Value"]
+                Fill: =RGBA(237, 237, 237, 0.6)
+                FocusedBorderThickness: =0
+                Font: =App.Theme.Font
+                Height: =32
+                HoverColor: =RGBA(0, 0, 0, 1)
+                HoverFill: =App.Theme.Colors.Lighter70
+                InputTextPlaceholder: ="--select a project--"
+                Items: =Distinct('Projects list', Name)
+                PressedColor: =App.Theme.Colors.PrimaryForeground
+                PressedFill: =App.Theme.Colors.Darker30
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct('Projects list',Name),ComboBox2_2.SearchText,Value)
+                SelectionColor: =App.Theme.Colors.PrimaryForeground
+                SelectionFill: =Color.Transparent
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Double
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =36
+                ZIndex: =5
+
+        "'Project ID_DataCard2' As typedDataCard.fluentV9TextualEditCard":
+            BorderColor: =App.Theme.Colors.Darker40
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ProjectID"
+            Default: =ThisItem.'Project ID'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Task list'],DataSourceInfo.DisplayName,'Project ID')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            MaxLength: =DataSourceInfo([@'Task list'], DataSourceInfo.MaxLength, 'Project ID')
+            Required: =false
+            Update: =DataCardValue7.Value
+            Visible: =false
+            Width: =337
+            X: =1
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey8 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =Parent.Width - 48
+                Wrap: =false
+                X: =24
+                Y: =10
+                ZIndex: =1
+
+            "DataCardValue7 As 'Text input'":
+                AccessibleLabel: =Parent.DisplayName
+                DisplayMode: =Parent.DisplayMode
+                Height: =32
+                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                Required: =Parent.Required
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Value: |-
+                    =/*If(
+                        Form1_1.Mode = FormMode.Edit,
+                        LookUp(
+                            'Projects list',
+                            'Project ID' = Table1_2.Selected.'Project ID',
+                            'Project ID'
+                        ),
+                        LookUp(
+                            'Projects list',
+                            Title = ComboBox2_2.Selected.Value,
+                            'Project ID'
+                        )
+                    )*/
+                       LookUp(
+                            'Projects list',
+                            Title = ComboBox2_2.Selected.Value,
+                            'Project ID'
+                        )
+                Width: =Parent.Width - 48
+                X: =24
+                Y: =DataCardKey8.Y + DataCardKey8.Height + 4
+                ZIndex: =2
+
+            ErrorMessage8 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue7.Y + DataCardValue7.Height
+                ZIndex: =3
+
+            StarVisible8 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey8.Y
+                ZIndex: =4
+
+    Label1_14 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(106, 122, 127, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        OnSelect: =Navigate('New Project Screen', ScreenTransition.Fade)
+        Text: ="Projects"
+        X: =60
+        Y: =122
+        ZIndex: =9
+
+    Label1_15 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(136, 160, 209, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        OnSelect: =Navigate('Task Screen', ScreenTransition.Fade)
+        Text: ="Tasks"
+        X: =60
+        Y: =182
+        ZIndex: =11
+
+    ButtonCanvas1_2 As Button:
+        BasePaletteColor: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =38
+        OnSelect: =Navigate('Task Screen')
+        Text: ="Back"
+        Width: =124
+        X: =1032
+        Y: =444
+        ZIndex: =12
+
+    ButtonCanvas1_3 As Button:
+        BasePaletteColor: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =38
+        OnSelect: =SubmitForm(Form1_1)
+        Text: ="Save"
+        Width: =124
+        X: =1188
+        Y: =444
+        ZIndex: =13
+

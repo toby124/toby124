@@ -1,0 +1,784 @@
+"'Home Screen_1' As screen":
+    Fill: =RGBA(237, 237, 237, 0.7)
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    Button1_1 As button:
+        BorderColor: =App.Theme.Colors.Primary
+        BorderThickness: =1
+        Color: =App.Theme.Colors.PrimaryForeground
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =1
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =768
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =0
+        RadiusTopLeft: =50
+        RadiusTopRight: =0
+        Size: =15
+        Text: =
+        Width: =1087
+        X: =259
+        ZIndex: =1
+
+    Image1_1 As image:
+        BorderColor: =App.Theme.Colors.Darker40
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =50
+        Image: =User().Image
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =50
+        X: =1296
+        Y: =16
+        ZIndex: =2
+
+    Label1_7 As label:
+        Align: =Align.Right
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(102, 102, 102, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        OnSelect: =
+        Text: ="Welcome, " & User().FullName
+        Width: =350
+        X: =924
+        Y: =26
+        ZIndex: =3
+
+    Label1_3 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(136, 160, 209, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Text: ="Dashboard"
+        X: =60
+        Y: =66
+        ZIndex: =4
+
+    Button1_9 As button:
+        BorderColor: =App.Theme.Colors.Primary
+        BorderThickness: =1
+        Color: =App.Theme.Colors.PrimaryForeground
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(214, 221, 224, 1)
+        FocusedBorderThickness: =1
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =220
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =RGBA(214, 221, 224, 1)
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(214, 221, 224, 1)
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =15
+        Text: =
+        Width: =462
+        X: =286
+        Y: =76
+        ZIndex: =6
+
+    Button1_10 As button:
+        BorderColor: =App.Theme.Colors.Primary
+        BorderThickness: =1
+        Color: =App.Theme.Colors.PrimaryForeground
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(214, 221, 224, 1)
+        FocusedBorderThickness: =1
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =220
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =RGBA(214, 221, 224, 1)
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(214, 221, 224, 1)
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =15
+        Text: =
+        Width: =462
+        X: =804
+        Y: =76
+        ZIndex: =7
+
+    Label1_28 As label:
+        Align: =Align.Center
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =41
+        OnSelect: =
+        Size: =25
+        Text: |-
+            =Value(
+                CountRows('Projects list'))
+        Width: =48
+        X: =618
+        Y: =85
+        ZIndex: =8
+
+    Label1_29 As label:
+        Align: =Align.Center
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =41
+        OnSelect: =
+        Size: =25
+        Text: |-
+            =Value(
+                CountRows('Task list'))
+        Width: =48
+        X: =1136
+        Y: =85
+        ZIndex: =9
+
+    Label1_20 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(102, 102, 102, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        OnSelect: =
+        Size: =17
+        Text: ="PROJECTS"
+        X: =312
+        Y: =86
+        ZIndex: =10
+
+    Button2_10 As button:
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =Color.White
+        Font: =Font.'Segoe UI'
+        Height: =35
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =Color.White
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =Self.Color
+        PressedFill: =Color.White
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =10
+        Text: =
+        Width: =110
+        X: =587
+        Y: =86
+        ZIndex: =11
+
+    Label1_30 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(102, 102, 102, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        OnSelect: =
+        Size: =17
+        Text: ="TASKS"
+        X: =830
+        Y: =86
+        ZIndex: =12
+
+    Button2_11 As button:
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =Color.White
+        Font: =Font.'Segoe UI'
+        Height: =35
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =Color.White
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =Self.Color
+        PressedFill: =Color.White
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =10
+        Text: =
+        Width: =110
+        X: =1105
+        Y: =86
+        ZIndex: =13
+
+    Button2_12 As button:
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =Color.White
+        Font: =Font.'Segoe UI'
+        Height: =23
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =Color.White
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =Self.Color
+        PressedFill: =Color.White
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =9
+        Text: ="total count"
+        Width: =110
+        X: =587
+        Y: =121
+        ZIndex: =14
+
+    Button2_13 As button:
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =Color.White
+        Font: =Font.'Segoe UI'
+        Height: =23
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =Color.White
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =Self.Color
+        PressedFill: =Color.White
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =9
+        Text: ="total count"
+        Width: =110
+        X: =1105
+        Y: =121
+        ZIndex: =15
+
+    Label1_4 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(102, 102, 102, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        OnSelect: =Navigate('New Project Screen', ScreenTransition.Fade)
+        Text: ="Projects"
+        X: =60
+        Y: =122
+        ZIndex: =16
+
+    Icon2_6 As Icon:
+        DisplayMode: =DisplayMode.Edit
+        Height: =120
+        Icon: ="Circle"
+        IconColor: =RGBA(247, 116, 38, 1)
+        IconStyle: ='Icon.IconStyle'.Filled
+        Width: =120
+        X: =600
+        Y: =145
+        ZIndex: =17
+
+    Icon2_7 As Icon:
+        DisplayMode: =DisplayMode.Edit
+        Height: =120
+        Icon: ="Circle"
+        IconColor: =RGBA(83, 144, 164, 1)
+        IconStyle: ='Icon.IconStyle'.Filled
+        Width: =120
+        X: =1118
+        Y: =145
+        ZIndex: =18
+
+    Icon2_8 As Icon:
+        DisplayMode: =DisplayMode.Edit
+        Height: =120
+        Icon: ="Circle"
+        IconColor: =RGBA(72, 163, 62, 1)
+        IconStyle: ='Icon.IconStyle'.Filled
+        Width: =120
+        X: =318
+        Y: =146
+        ZIndex: =19
+
+    Icon2_9 As Icon:
+        DisplayMode: =DisplayMode.Edit
+        Height: =120
+        Icon: ="Circle"
+        IconColor: =RGBA(255, 191, 0, 1)
+        IconStyle: ='Icon.IconStyle'.Filled
+        Width: =120
+        X: =457
+        Y: =146
+        ZIndex: =20
+
+    Icon2_10 As Icon:
+        DisplayMode: =DisplayMode.Edit
+        Height: =120
+        Icon: ="Circle"
+        IconColor: =RGBA(62, 128, 149, 1)
+        IconStyle: ='Icon.IconStyle'.Filled
+        Width: =120
+        X: =836
+        Y: =146
+        ZIndex: =21
+
+    Icon2_11 As Icon:
+        DisplayMode: =DisplayMode.Edit
+        Height: =120
+        Icon: ="Circle"
+        IconColor: =RGBA(139, 154, 159, 1)
+        IconStyle: ='Icon.IconStyle'.Filled
+        Width: =120
+        X: =975
+        Y: =146
+        ZIndex: =22
+
+    Circle1_12 As circle:
+        BorderColor: =App.Theme.Colors.Darker40
+        Fill: =RGBA(214, 221, 224, 1)
+        Height: =60
+        Width: =60
+        X: =630
+        Y: =175
+        ZIndex: =23
+
+    Circle1_13 As circle:
+        BorderColor: =App.Theme.Colors.Darker40
+        Fill: =RGBA(214, 221, 224, 1)
+        Height: =60
+        Width: =60
+        X: =1148
+        Y: =175
+        ZIndex: =24
+
+    Circle1_14 As circle:
+        BorderColor: =App.Theme.Colors.Darker40
+        Fill: =RGBA(214, 221, 224, 1)
+        Height: =60
+        Width: =60
+        X: =348
+        Y: =176
+        ZIndex: =25
+
+    Circle1_15 As circle:
+        BorderColor: =App.Theme.Colors.Darker40
+        Fill: =RGBA(214, 221, 224, 1)
+        Height: =60
+        Width: =60
+        X: =487
+        Y: =176
+        ZIndex: =26
+
+    Circle1_16 As circle:
+        BorderColor: =App.Theme.Colors.Darker40
+        Fill: =RGBA(214, 221, 224, 1)
+        Height: =60
+        Width: =60
+        X: =866
+        Y: =176
+        ZIndex: =27
+
+    Circle1_17 As circle:
+        BorderColor: =App.Theme.Colors.Darker40
+        Fill: =RGBA(214, 221, 224, 1)
+        Height: =60
+        Width: =60
+        X: =1005
+        Y: =176
+        ZIndex: =28
+
+    Label1_31 As label:
+        Align: =Align.Center
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(52, 152, 47, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =41
+        OnSelect: =
+        Size: =20
+        Text: |-
+            =
+                CountRows(Filter('Projects list', 'Current Status'.Value = "On Track"))
+        Width: =48
+        X: =354
+        Y: =179
+        ZIndex: =29
+
+    Label1_45 As label:
+        Align: =Align.Center
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(247, 116, 38, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =41
+        OnSelect: =
+        Size: =20
+        Text: |-
+            =
+                CountRows(Filter('Projects list', 'Current Status'.Value = "Delayed"))
+        Width: =48
+        X: =636
+        Y: =179
+        ZIndex: =30
+
+    Label1_32 As label:
+        Align: =Align.Center
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(62, 128, 149, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =41
+        OnSelect: =
+        Size: =20
+        Text: |-
+            =
+                CountRows(Filter('Task list', 'Task Status'.Value = "Complete"))
+        Width: =48
+        X: =872
+        Y: =179
+        ZIndex: =31
+
+    Label1_46 As label:
+        Align: =Align.Center
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(83, 144, 164, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =41
+        OnSelect: =
+        Size: =20
+        Text: |-
+            =
+                CountRows(Filter('Task list', 'Task Status'.Value = "In-Progress"))
+        Width: =48
+        X: =1154
+        Y: =179
+        ZIndex: =32
+
+    Label1_5 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(102, 102, 102, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        OnSelect: =Navigate('Task Screen', ScreenTransition.Fade)
+        Text: ="Tasks"
+        X: =60
+        Y: =182
+        ZIndex: =33
+
+    Label1_47 As label:
+        Align: =Align.Center
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(255, 191, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =41
+        OnSelect: =
+        Size: =20
+        Text: |-
+            =
+                CountRows(Filter('Projects list', 'Current Status'.Value = "At Risk"))
+        Width: =48
+        X: =493
+        Y: =182
+        ZIndex: =34
+
+    Label1_48 As label:
+        Align: =Align.Center
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(106, 122, 127, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =41
+        OnSelect: =
+        Size: =20
+        Text: |-
+            =
+                CountRows(Filter('Task list', 'Task Status'.Value = "Pending"))
+        Width: =48
+        X: =1011
+        Y: =182
+        ZIndex: =35
+
+    Button2_14 As button:
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =Color.White
+        Font: =Font.'Segoe UI'
+        Height: =23
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =App.Theme.Colors.Darker10
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =Self.Color
+        PressedFill: =App.Theme.Colors.Darker40
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =10
+        Text: ="on track"
+        Width: =110
+        X: =317
+        Y: =262
+        ZIndex: =36
+
+    Button2_15 As button:
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =Color.White
+        Font: =Font.'Segoe UI'
+        Height: =23
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =App.Theme.Colors.Darker10
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =Self.Color
+        PressedFill: =App.Theme.Colors.Darker40
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =10
+        Text: ="at risk"
+        Width: =110
+        X: =462
+        Y: =262
+        ZIndex: =37
+
+    Button2_16 As button:
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =Color.White
+        Font: =Font.'Segoe UI'
+        Height: =23
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =App.Theme.Colors.Darker10
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =Self.Color
+        PressedFill: =App.Theme.Colors.Darker40
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =10
+        Text: ="delayed"
+        Width: =110
+        X: =604
+        Y: =262
+        ZIndex: =38
+
+    Button2_17 As button:
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =Color.White
+        Font: =Font.'Segoe UI'
+        Height: =23
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =App.Theme.Colors.Darker10
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =Self.Color
+        PressedFill: =App.Theme.Colors.Darker40
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =10
+        Text: ="completed"
+        Width: =110
+        X: =835
+        Y: =262
+        ZIndex: =39
+
+    Button2_18 As button:
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =Color.White
+        Font: =Font.'Segoe UI'
+        Height: =23
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =App.Theme.Colors.Darker10
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =Self.Color
+        PressedFill: =App.Theme.Colors.Darker40
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =10
+        Text: ="in-progress"
+        Width: =110
+        X: =980
+        Y: =262
+        ZIndex: =40
+
+    Button2_19 As button:
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =Color.White
+        Font: =Font.'Segoe UI'
+        Height: =23
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =App.Theme.Colors.Darker10
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =Self.Color
+        PressedFill: =App.Theme.Colors.Darker40
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =10
+        Text: ="pending"
+        Width: =110
+        X: =1122
+        Y: =262
+        ZIndex: =41
+
+    Button1_12 As button:
+        BorderColor: =App.Theme.Colors.Primary
+        BorderThickness: =1
+        Color: =App.Theme.Colors.PrimaryForeground
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =1
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =409
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =App.Theme.Colors.PrimaryForeground
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =15
+        Text: =
+        Width: =1010
+        X: =275
+        Y: =339
+        ZIndex: =42
+
+    CompositeColumnChart1_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =44
+
+        ColumnChart1_1 As barChart:
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            GridStyle: =GridStyle.All
+            Height: =398
+            ItemColorSet: =[RGBA(49, 130, 93, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+            Items: ='Projects list'
+            ItemsGap: =10
+            Width: =955
+            X: =290
+            Y: =339
+            ZIndex: =43
+
+        Legend1_1 As legend:
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            Height: =32
+            ItemColorSet: =ColumnChart1_1.ItemColorSet
+            Items: =ColumnChart1_1.SeriesLabels
+            Width: =762
+            X: =318
+            Y: =716
+            ZIndex: =44
+
